@@ -43,4 +43,6 @@ $(function () {
   $("div").css("margin", "auto");
   $("div").css("border-radius", "50px");
   $("div").css("box-shadow", "10px 10px 10px 10px #ee7e63");
+  $("div").animate({ height: "400px", width: "400px" }, 3000);
+  $("div").animate({ height: "500px", width: "500px" }, 3000);
 });
