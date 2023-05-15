@@ -77,3 +77,89 @@ $(function () {
   }
   animateDiv2();
 });
+
+// Array of courses, prices, book pages, and book prices
+let courses = [
+  {
+    name: "HTML",
+    price: 100,
+    book: "HTML for Dummies",
+    bookPrice: 20,
+  },
+  {
+    name: "CSS",
+    price: 100,
+    book: "CSS for Dummies",
+    bookPrice: 20,
+  },
+  {
+    name: "JavaScript",
+    price: 100,
+    book: "JavaScript for Dummies",
+    bookPrice: 20,
+  },
+  {
+    name: "Python",
+    price: 100,
+    book: "Python for Dummies",
+    bookPrice: 20,
+  },
+  {
+    name: "Java",
+    price: 100,
+    book: "Java for Dummies",
+    bookPrice: 20,
+  },
+  {
+    name: "C++",
+    price: 100,
+    book: "C++ for Dummies",
+    bookPrice: 20,
+  },
+];
+
+// Function to display the courses on a table
+$(function () {
+  let table = $("#table");
+  let data = "";
+  data += "<tr>";
+  data += "<th>" + "Course" + "</th>";
+  data += "<th>" + "Price" + "</th>";
+  data += "<th>" + " Book Title " + "</th>";
+  data += "<th>" + "Book Price " + "</th>";
+  data += "</tr>";
+  for (let i = 0; i < courses.length; i++) {
+    data += "<tr>";
+    data += "<td>" + courses[i].name + "</td>";
+    data += "<td>" + courses[i].price + "</td>";
+    data += "<td>" + courses[i].book + "</td>";
+    data += "<td>" + courses[i].bookPrice + "</td>";
+    data += "</tr>";
+  }
+  var total = 0;
+  for (let i = 0; i < courses.length; i++) {
+    total += courses[i].price;
+  }
+  data += "<tr>";
+  data += "<td>" + "Total :" + "</td>";
+  data += "<td>" + total + "</td>";
+  data += "<td>" + " " + "</td>";
+  data += "<td>" + " " + "</td>";
+  data += "</tr>";
+
+  table.append(data);
+  table.css("border", "2px solid black");
+  table.css("border-collapse", "collapse");
+  table.css("width", "500px");
+  table.css("height", "200px");
+  table.css("margin", "auto");
+  table.css("margin-top", "50px");
+  table.css("text-align", "center");
+  table.css("font-size", "20px");
+  //   Insert border in between each row
+  $("tr").css("border", "1px solid black");
+  //   Insert border in between each column
+  $("td").css("border", "1px solid black");
+  //   Insert border around the entire table
+  $("th").css("border", "1px solid black");
+});
