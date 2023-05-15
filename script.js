@@ -43,6 +43,37 @@ $(function () {
   $("div").css("margin", "auto");
   $("div").css("border-radius", "50px");
   $("div").css("box-shadow", "10px 10px 10px 10px #ee7e63");
-  $("div").animate({ height: "400px", width: "400px" }, 3000);
-  $("div").animate({ height: "500px", width: "500px" }, 3000);
+  //   $("div").animate({ height: "400px", width: "400px" }, 3000);
+  //   $("div").animate({ height: "500px", width: "500px" }, 3000);
+  //   $("div").animate({ height: "400px", width: "400px" }, 3000);
+  //   $("div").animate({ height: "500px", width: "500px" }, 3000);
+
+  //  Function to keep the animation going forever and ever
+  function animateDiv() {
+    $("div").animate({ height: "400px", width: "400px" }, 3000);
+    $("div").animate({ height: "500px", width: "500px" }, 3000, animateDiv);
+  }
+  animateDiv();
+
+  //   Animating the box shadow to make it look like it's moving around the screen and changing colors as it goes along the way
+  function animateDiv2() {
+    $("div").animate(
+      {
+        height: "400px",
+        width: "400px",
+        boxShadow: "10px 10px 10px 10px #ee7e63",
+      },
+      3000
+    );
+    $("div").animate(
+      {
+        height: "500px",
+        width: "500px",
+        boxShadow: "10px 10px 10px 10px #f9f9f9",
+      },
+      3000,
+      animateDiv2
+    );
+  }
+  animateDiv2();
 });
