@@ -75,7 +75,7 @@ $(function () {
       animateDiv2
     );
   }
-  animateDiv2();
+  //   animateDiv2();
 });
 
 // Array of courses, prices, book pages, and book prices
@@ -162,4 +162,23 @@ $(function () {
   $("td").css("border", "1px solid black");
   //   Insert border around the entire table
   $("th").css("border", "1px solid black");
+});
+
+$(function () {
+  $("#ajax_form").submit(function (event) {
+    event.preventDefault();
+    var $form = $(this);
+    $.ajax({
+      type: "POST",
+      url: $form.attr("action"),
+      data: $form.serialize(),
+      success: function (data) {
+        console.log(data);
+        alert("Your message has been sent!");
+      },
+      error: function (error) {
+        console.log(error);
+      },
+    });
+  });
 });
