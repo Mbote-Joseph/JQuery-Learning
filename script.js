@@ -151,9 +151,11 @@ $(function () {
   table.css("border", "2px solid black");
   table.css("border-collapse", "collapse");
   table.css("width", "500px");
-  table.css("height", "200px");
-  table.css("margin", "auto");
+  //   table.css("height", "200px");
+  //   table.css("margin", "auto");
   table.css("margin-top", "50px");
+  table.css("margin-bottom", "50px");
+
   table.css("text-align", "center");
   table.css("font-size", "20px");
   //   Insert border in between each row
@@ -179,6 +181,15 @@ $(function () {
       error: function (error) {
         console.log(error);
       },
+    });
+  });
+});
+
+$(document).ready(function () {
+  $("#myInput").on("keyup", function () {
+    var value = $(this).val().toLowerCase();
+    $("table tr").filter(function () {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
     });
   });
 });
