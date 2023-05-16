@@ -58,7 +58,7 @@ $('img').animate({
     alert("Animated image")
 });
 
-# ANother example
+# Another example
 $('img').slideUP(2000, function() {
     $('img').slideDown(2000);
     });
@@ -68,9 +68,41 @@ $('img').slideUP(2000, function() {
 
 - DOM Manipulation in jQuery.
 
+```sh
+$('body').html();
+.attr('src');
+
+- id - $('#id').slideDown(2000);
+- class - $('.class').slideUp(2000);
+- tagName - $('tag').hide();
+
+
+# Alerting the rgb color of the element
+$('.div1').click(function() {
+    alert($('.div1').css('background-color'));
+});
+
+
+# Methods
+.append('<p>This is a paragraph</p>')
+.prepend('<p>This is a paragraph</p>')
+.before('<p>This is a paragraph</p>')
+.after('<p>This is a paragraph</p>')
+.remove();
+.empty();
+```
+
 - What is jQuery UI?
 
+```sh
+- Open javascript library
+```
+
 - widgets in jQuery.
+
+```sh
+https://jqueryui.com/
+```
 
 - interactions in jQuery.
 
